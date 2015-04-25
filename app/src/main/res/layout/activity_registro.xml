@@ -60,7 +60,7 @@
                     android:src="@drawable/dr_account"/>
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/nuevoEmail"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -88,52 +88,52 @@
                     android:src="@drawable/dr_pass"/>
 
                 <EditText
-                    android:id="@+id/contraseña"
+                    android:id="@+id/nuevoContraseña"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:text="@string/contraseña"
+                    android:text="@string/contraseña1"
                     android:textColor="@color/gris"
                     android:layout_gravity="center"
                     android:editable="false"
                     android:background="#00000000"/>
 
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/blanco">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@color/blanco"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/dr_pass"/>
+
+                <EditText
+                    android:id="@+id/confContraseña"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contraseña2"
+                    android:textColor="@color/gris"
+                    android:layout_gravity="center"
+                    android:editable="false"
+                    android:background="#00000000"/>
+
+
             </LinearLayout>
 
         </LinearLayout>
-
-
-        <Button
-            android:id="@+id/acceder"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            android:layout_gravity="center"
-            android:text="@string/acceder"
-            android:layout_marginBottom="33dp"
-            android:background="@drawable/boton_login"
-            android:textColor="@drawable/texto_login"
-            android:textSize="18sp"
-            android:onClick="acceder"/>
-
-        <TextView
-            android:id="@+id/recuperar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/recuperar"
-            android:textColor="@color/blanco"
-            android:textSize="16sp"
-            android:textIsSelectable="false"
-            android:layout_marginTop="-25dp"
-            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/registrar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
             android:layout_gravity="center"
@@ -142,7 +142,7 @@
             android:background="@drawable/boton_registro"
             android:textColor="@drawable/texto_registro"
             android:textSize="18sp"
-            android:onClick="registrar"/>
-0
+            android:onClick="crear"/>
+
     </LinearLayout>
 </ScrollView>

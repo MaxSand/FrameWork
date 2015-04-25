@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    android:id="@+id/scrollView"
+    android:background="@color/blanco"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blanco"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grisFondo"
+            android:orientation="horizontal">
+
+            <framework.aplicacion.com.framework.CustomImageView
+                android:id="@+id/perfil"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/fondo_perfil"
+                android:src="@drawable/dr_perfil"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre"/>
+
+                <framework.aplicacion.com.framework.Fuente.CustomEditText
+                    android:id="@+id/nombre"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Maximiliano Sandoval Davila"
+                    android:textSize="20sp"
+                    android:textColor="@color/negro"
+                    android:background="#00000000"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entidad"/>
+
+                <framework.aplicacion.com.framework.Fuente.CustomEditText
+                    android:id="@+id/entidad"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Academia de ciencias"
+                    android:textSize="20sp"
+                    android:textColor="@color/negro"
+                    android:background="#00000000"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@color/negro"
+            />
+
+
+   </LinearLayout>
+
+</ScrollView>
