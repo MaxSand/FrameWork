@@ -15,6 +15,7 @@ public class Login extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
+
     }
     public void acceder (View v){
         Intent act =new Intent(this,Cuenta.class);

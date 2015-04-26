@@ -15,9 +15,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
-
-import java.io.IOError;
 
 import framework.aplicacion.com.framework.R;
 
@@ -28,6 +27,8 @@ public class Cuenta extends ActionBarActivity {
 
     private SharedPreferences prefs;
     private ImageView perfil;
+    private EditText nombre,entidad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +40,15 @@ public class Cuenta extends ActionBarActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff5acfcb")));
 
         perfil = (ImageView)this.findViewById(R.id.perfil);
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String picturePath = prefs.getString("profilePic", "");
+        nombre = (EditText)this.findViewById(R.id.nombre);
+        entidad = (EditText)this.findViewById(R.id.entidad);
 
-        try {
-            if (!picturePath.equals("")) {
-                perfil.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-            }
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String picturePath = prefs.getString("imagenPerfil", "");
+        if (!picturePath.equals("")) {
+            perfil.setImageBitmap(BitmapFactory.decodeFile(picturePath));
         }
-        catch(IOError e) {
-            perfil.setImageResource(R.drawable.dr_perfil);
-        }
+
         perfil.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
 
@@ -60,6 +59,24 @@ public class Cuenta extends ActionBarActivity {
             }
         });
 
+        nombre.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    savePreferences("nombre",nombre.getText().toString());
+                }
+            }
+        });
+        entidad.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    savePreferences("entidad",entidad.getText().toString());
+                }
+            }
+        });
+
+        loadSavedPreferences();
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent imageResult) {
         super.onActivityResult(requestCode, resultCode, imageResult);
@@ -76,11 +93,26 @@ public class Cuenta extends ActionBarActivity {
             cursor.close();
             prefs = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor edit=prefs.edit();
-            edit.putString("profilePic", picturePath);
+            edit.putString("imagenPerfil", picturePath);
             edit.commit();
         }
     }
+    private void savePreferences(String key, String value) {
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(key, value);
+        editor.commit();
+
+    }
+    private void loadSavedPreferences() {
+
+        prefs= PreferenceManager.getDefaultSharedPreferences(this);
+
+        nombre.setText(prefs.getString("nombre", "Tu nombre.."));
+        entidad.setText(prefs.getString("entidad", "Academia.."));
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
