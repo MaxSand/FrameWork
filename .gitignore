@@ -25,3 +25,4 @@ proguard/
 
 # Log Files
 *.log
+app/src/main/java/framework/aplicacion/com/framework/Parse/ParseAplicacion.java
