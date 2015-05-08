@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grisFondo"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/background_sombra"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/nuevoNombre"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/codigo"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/nuevoCodigo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/entidad"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/nuevoEntidad"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rol"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/nuevoRol"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical">
+
+        <framework.aplicacion.com.framework.Fuente.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reglaM"
+            android:textSize="15sp"
+            android:textColor="@color/negro"/>
+
+        <Button
+            android:id="@+id/registrar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_gravity="center"
+            android:text="@string/guarda"
+            android:layout_marginBottom="33dp"
+            android:background="@drawable/boton_registro"
+            android:textColor="@color/blanco"
+            android:textSize="18sp"
+            android:onClick="guardar"/>
+
+    </LinearLayout>
+
+</LinearLayout>

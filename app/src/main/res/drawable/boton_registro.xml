@@ -38,7 +38,7 @@
                 android:bottom="0dp"
                 />
             <solid
-                android:color="@color/blanco"
+                android:color="@color/verdeC"
                 />
             <size
                 android:width="220dp"
@@ -46,7 +46,7 @@
                 />
             <stroke
                 android:width="3dp"
-                android:color="@color/verdeA"
+                android:color="@color/verdeB"
                 />
         </shape>
     </item>

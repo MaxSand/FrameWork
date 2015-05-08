@@ -8,19 +8,19 @@ import android.widget.EditText;
 /**
  * Created by Max_Sandoval on 25/04/2015.
  */
-public class CustomEditText extends EditText {
+public class RobotoEditText extends EditText {
 
-    public CustomEditText(Context context, AttributeSet attrs, int defStyle) {
+    public RobotoEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
-    public CustomEditText(Context context, AttributeSet attrs) {
+    public RobotoEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public CustomEditText(Context context) {
+    public RobotoEditText(Context context) {
         super(context);
         init();
     }

@@ -16,4 +16,34 @@
     <string name="nombre">Nombre:</string>
     <string name="funcion">Puesto:</string>
     <string name="entidad">Entidad:</string>
+    <string name="sesiones">Sesiones</string>
+    <string name="miembros">Miembros</string>
+    <string name="miembro">Miembro</string>
+    <string name="documentos">Documentos</string>
+    <string name="sesion">Sesion</string>
+    <string name="rol">Rol:</string>
+    <string name="codigo">Codigo:</string>
+    <string name="sesionesActiv">Sesiones Activas:</string>
+    <string name="sesionesConclu">Sesiones Concluidas:</string>
+    <string name="nuevo">Nuevo:</string>
+
+    //nuevoMiembro
+
+    <string name="reglaM">Introduzca los datos de los miembros que serán establecidos en la minuta, estos
+    miembros serán guardados en la sección que lleva el mismo nombre donde podrá editarlos o eliminarlos.</string>
+    <string name="guarda">Guardar</string>
+    <string name="guardado">Nuevo miembro guardado.</string>
+
+    //miembros
+    <string name="descripcionM">Miembros ingresados hasta el momento.</string>
+    <string name="ListVacia">Aun no haz ingresado ningun miembro</string>
+
+    //PDF marco
+    <string name="ruta">/FrameWork/PDF</string>
+    <string name="errorPDF">Error de permisos, no se puede leer ni editar la unidad de almacenamiento.</string>
+
+    //Sesiones
+    <string name="sesionA">No hay sesiones Activas</string>
+    <string name="sesionC">No hay sesiones Concluidas</string>
+
 </resources>

@@ -17,7 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import framework.aplicacion.com.framework.Activities.Bar.Documentos;
+import framework.aplicacion.com.framework.Activities.Bar.Miembros;
+import framework.aplicacion.com.framework.Activities.Bar.Sesiones;
+import framework.aplicacion.com.framework.Activities.Nuevos.nuevoMiembro;
+import framework.aplicacion.com.framework.Activities.Nuevos.nuevoSesion;
 import framework.aplicacion.com.framework.R;
 
 /**
@@ -27,7 +33,9 @@ public class Cuenta extends ActionBarActivity {
 
     private SharedPreferences prefs;
     private ImageView perfil;
-    private EditText nombre,entidad;
+    private ImageView sesiones, miembros, documentos;
+    private EditText nombre,entidad, codigo, rol;
+    private TextView sesionAct, sesionCon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,46 +45,74 @@ public class Cuenta extends ActionBarActivity {
         actionBar.setLogo(R.mipmap.ic_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff5acfcb")));
+        actionBar.setTitle("Perfil");
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#bb367bbf")));
 
         perfil = (ImageView)this.findViewById(R.id.perfil);
         nombre = (EditText)this.findViewById(R.id.nombre);
         entidad = (EditText)this.findViewById(R.id.entidad);
+        codigo = (EditText)this.findViewById(R.id.codigo);
+        rol = (EditText)this.findViewById(R.id.rol);
+        sesionAct = (TextView)this.findViewById(R.id.sesionAct);
+        sesionCon = (TextView)this.findViewById(R.id.sesionCon);
+        sesiones = (ImageView)this.findViewById(R.id.sesiones);
+        miembros = (ImageView)this.findViewById(R.id.miembros);
+        documentos = (ImageView)this.findViewById(R.id.documentos);
 
+        sesiones.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Sesiones.class));
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
+        miembros.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Miembros.class));
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
+        documentos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Documentos.class));
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        });
+
+        perfil.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, 100);
+            }
+        });
+    }
+
+    public void nuevoMiembro (View v){
+        Intent act =new Intent(this,nuevoMiembro.class);
+        startActivity(act);
+        overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
+    }
+    public void nuevoSesion (View v){
+        Intent act =new Intent(this,nuevoSesion.class);
+        startActivity(act);
+        overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
+    }
+
+    public void onPause(){
+        super.onPause();
+        savePreferences("nombre",nombre.getText().toString());
+        savePreferences("entidad",entidad.getText().toString());
+        savePreferences("codigo",codigo.getText().toString());
+        savePreferences("rol",rol.getText().toString());
+    }
+    public void onResume(){
+        super.onResume();
+        loadSavedPreferences();
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String picturePath = prefs.getString("imagenPerfil", "");
         if (!picturePath.equals("")) {
             perfil.setImageBitmap(BitmapFactory.decodeFile(picturePath));
         }
-
-        perfil.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view) {
-
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, 100);
-
-            }
-        });
-
-        nombre.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus){
-                    savePreferences("nombre",nombre.getText().toString());
-                }
-            }
-        });
-        entidad.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus){
-                    savePreferences("entidad",entidad.getText().toString());
-                }
-            }
-        });
-
-        loadSavedPreferences();
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent imageResult) {
         super.onActivityResult(requestCode, resultCode, imageResult);
@@ -109,8 +145,10 @@ public class Cuenta extends ActionBarActivity {
 
         prefs= PreferenceManager.getDefaultSharedPreferences(this);
 
-        nombre.setText(prefs.getString("nombre", "Tu nombre.."));
+        nombre.setText(prefs.getString("nombre", "Nombre.."));
         entidad.setText(prefs.getString("entidad", "Academia.."));
+        codigo.setText(prefs.getString("codigo", "Codigo.."));
+        rol.setText(prefs.getString("rol", "Rol en entidad.."));
 
     }
 

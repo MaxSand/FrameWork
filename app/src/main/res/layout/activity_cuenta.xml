@@ -10,7 +10,7 @@
     android:paddingBottom="0dp"
     android:id="@+id/scrollView"
     android:background="@color/grisFondo"
-    android:fillViewport="false">
+    android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,10 +22,104 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/blanco"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="left|center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/sesiones"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dr_sesion"
+                    android:background="#00000000"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sesiones"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center|center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/miembros"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dr_miembros"
+                    android:background="#00000000"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/miembros"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right|center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/documentos"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dr_documentos"
+                    android:background="#00000000"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/documentos"
+                    android:textColor="@color/negro"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/background_sombra"
             android:orientation="horizontal">
 
@@ -51,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/nombre"/>
 
-                <framework.aplicacion.com.framework.Fuente.CustomEditText
+                <framework.aplicacion.com.framework.Fuente.RobotoEditText
                     android:id="@+id/nombre"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -62,10 +156,10 @@
                 <framework.aplicacion.com.framework.Fuente.RobotoTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/entidad"/>
+                    android:text="@string/codigo"/>
 
-                <framework.aplicacion.com.framework.Fuente.CustomEditText
-                    android:id="@+id/entidad"
+                <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                    android:id="@+id/codigo"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
@@ -75,6 +169,156 @@
             </LinearLayout>
 
         </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_sombra"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/entidad"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/entidad"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rol"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoEditText
+                android:id="@+id/rol"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/sesionesActiv"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:id="@+id/sesionAct"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="0"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sesionesConclu"/>
+
+            <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                android:id="@+id/sesionCon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="0"
+                android:textColor="@color/negro"
+                android:background="#00000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/azulA"
+                android:orientation="vertical">
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/nuevo"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blanco"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grisFondo"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/nuevoM"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dr_nmiembro"
+                    android:onClick="nuevoMiembro"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:text="@string/miembro"
+                    android:textColor="@color/negro"
+                    android:layout_gravity="center"
+                    />
+
+                <Button
+                    android:id="@+id/nuevoS"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/dr_nsesion"
+                    android:onClick="nuevoSesion"/>
+
+                <framework.aplicacion.com.framework.Fuente.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-15dp"
+                    android:text="@string/sesion"
+                    android:textColor="@color/negro"
+                    android:layout_gravity="center"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
    </LinearLayout>
 

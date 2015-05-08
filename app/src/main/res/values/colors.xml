@@ -4,14 +4,18 @@
     <item name="verde" type="color">#33CC99</item>
     <item name="azulA" type="color">#ff47c6c6</item>
     <item name="azulB" type="color">#bb3791d6</item>
+    <item name="azulC" type="color">#bb367bbf</item>
     <item name="azulFondo" type="color">#ff5acfcb</item>
     <item name="verdeA" type="color">#ff3dcf66</item>
     <item name="verdeB" type="color">#ff3cc663</item>
+    <item name="verdeC" type="color">#ff38b760</item>
 
+    <item name="seleccion" type="color">#ffdcff8a</item>
 
     <item name="blanco" type="color">#fdfff4</item>
     <item name="negro" type="color">#ff000000</item>
     <item name="gris" type="color">#d4575757</item>
+    <item name="grisSombra" type="color">#d4848484</item>
     <item name="grisFondo" type="color">#d4e9e9e9</item>
 
 

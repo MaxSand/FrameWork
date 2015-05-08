@@ -7,21 +7,21 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
     android:id="@+id/scrollView"
-    android:background="@color/azulFondo">
+    android:background="@color/grisFondo">
+
 
     <LinearLayout
-        android:id="@+id/activity_login"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:background="@color/azulFondo"
+        android:background="@color/grisFondo"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:src="@drawable/dr_logo"/>
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textSize="50sp"
-            android:textColor="@color/blanco"
+            android:textColor="@color/negro"
             android:layout_gravity="center"
             android:layout_marginTop="-5dp"/>
 
@@ -38,8 +38,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:orientation="vertical"
             android:background="@color/blanco"
             android:layout_gravity="center">
@@ -88,7 +88,7 @@
                     android:src="@drawable/dr_pass"/>
 
                 <EditText
-                    android:id="@+id/nuevoContraseña"
+                    android:id="@+id/nuevoContrasena"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/contraseña1"
@@ -115,7 +115,7 @@
                     android:src="@drawable/dr_pass"/>
 
                 <EditText
-                    android:id="@+id/confContraseña"
+                    android:id="@+id/confContrasena"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/contraseña2"
@@ -130,7 +130,6 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/registrar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -140,7 +139,7 @@
             android:text="@string/registrar"
             android:layout_marginBottom="33dp"
             android:background="@drawable/boton_registro"
-            android:textColor="@drawable/texto_registro"
+            android:textColor="@color/blanco"
             android:textSize="18sp"
             android:onClick="crear"/>
 
